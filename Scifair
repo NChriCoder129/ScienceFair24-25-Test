@@ -1,0 +1,95 @@
+import openai
+import numpy as np
+vitA = 0.3
+vitB1 = 0.4
+vitB2 = 0.433
+vitB3 = 5.333
+vitB5 = 1.667
+vitB6 = 0.433
+vitB7 = 10
+vitB9 = 1.333
+vitB12 = 0.8
+vitC = 30
+vitD = 0.005
+vitE = 5
+vitK = 40
+vitCh = 183.333
+minCa = 333.333
+minCl = 766.667
+minCr = 11.667
+minCu = 3
+minF = 1.333
+minI = 0.05
+minFe = 2.667
+minMg = 140
+minMn = 0.767
+minMo = 0.015
+minP = 233.333
+minK = 1566.667
+minSe = 0.018
+minNa = 766.667
+minS = 283.333
+minZn = 3.667
+vitmin = [vitA, vitB1, vitB2, vitB3, vitB5, vitB6, vitB7, vitB9, vitB12, vitC, vitD, vitE, vitK, vitCh, minCa, minCl, minCr, minCu, minF, minI, minFe, minMg, minMn, minMo, minP, minK, minSe, minNa, minS, minZn]
+from openai import OpenAI
+system_content = "You are a travel agent. Be descriptive and helpful."
+user_content = "Tell me about San Francisco"
+client = openai.OpenAI(
+    api_key="0325108a87964c319a9717362ce9f029",
+    base_url="https://api.aimlapi.com/",
+    )
+stream = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "."}],
+    stream=True,
+)
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="")import openai
+import numpy as np
+vitA = 0.3
+vitB1 = 0.4
+vitB2 = 0.433
+vitB3 = 5.333
+vitB5 = 1.667
+vitB6 = 0.433
+vitB7 = 10
+vitB9 = 1.333
+vitB12 = 0.8
+vitC = 30
+vitD = 0.005
+vitE = 5
+vitK = 40
+vitCh = 183.333
+minCa = 333.333
+minCl = 766.667
+minCr = 11.667
+minCu = 3
+minF = 1.333
+minI = 0.05
+minFe = 2.667
+minMg = 140
+minMn = 0.767
+minMo = 0.015
+minP = 233.333
+minK = 1566.667
+minSe = 0.018
+minNa = 766.667
+minS = 283.333
+minZn = 3.667
+vitmin = [vitA, vitB1, vitB2, vitB3, vitB5, vitB6, vitB7, vitB9, vitB12, vitC, vitD, vitE, vitK, vitCh, minCa, minCl, minCr, minCu, minF, minI, minFe, minMg, minMn, minMo, minP, minK, minSe, minNa, minS, minZn]
+from openai import OpenAI
+system_content = "You are a travel agent. Be descriptive and helpful."
+user_content = "Tell me about San Francisco"
+client = openai.OpenAI(
+    api_key="0325108a87964c319a9717362ce9f029",
+    base_url="https://api.aimlapi.com/",
+    )
+stream = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "."}],
+    stream=True,
+)
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="")
